@@ -1,0 +1,42 @@
+footer{
+
+  
+
+    width:100%;
+ 
+   display:flex;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+
+    position:absolute;
+
+
+  
+   
+
+    }
+
+footer a{
+
+        color:white;
+    }
+
+
+
+.font-awesome{
+
+  
+
+  
+   padding-left:20px;;
+  
+}
+
+
+ .font-awesome2{
+
+   
+    padding-left:400px;
+   
+  
+}

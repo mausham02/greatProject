@@ -1,0 +1,11 @@
+
+
+a:hover{
+
+    text-decoration: underline;
+    font-weight: bold;
+    transition: ease-in-out;
+    transition:0.2s;
+    cursor: pointer;
+
+}
