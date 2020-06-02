@@ -1,75 +1,69 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #DCB668  ;">
-       
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
 
-              <div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-                <li>
-                    <a href="#"> <img src="../assets/images/AFLLOGO.png" class="logo"></a>
-                </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
 
-              </div>
+      <div>
 
-             </ul>
-           </div>
-           <div>
-            <a routerLink="/matches" class="halfNav">Find your team matches details</a>
-           </div>
+        <li>
+          <a href="#"> <img src="../assets/images/AFLLOGO.png" class="logo"></a>
+        </li>
 
-           
+      </div>
 
-           <div >
-              
-             <a routerLink="/prediction" class="halfNav">Go to Predicition Section</a>
-           </div>
-           
-     </nav>
+    </ul>
+  </div>
+  <div>
+    <a routerLink="/matches" class="halfNav">Find your team matches details</a>
+  </div>
 
 
-    
- 
 
+  <div>
 
-    
+    <a routerLink="/prediction" class="halfNav">Go to Predicition Section</a>
+  </div>
+
+</nav>
 
 
 
 
- 
-
-  <!-- Page Content -->
-  <div class="container"  >
-
-    <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
-      <h1 class="display-3">Welcome to the AFL Website</h1>
-      <p class="lead">Scroll down to see the leader board and other related news</p>
-    
-    </header>
-
-    <div>
-        <table cellpadding="0" class='table' style="width: 500px;height:500px">
-            <tr >
-            
-                <th>Team</th>
-                <th>Wins</th>
-            </tr>
-            <tr *ngFor="let lad of ladder">
-              
-                <td>{{lad.team}}</td>
-                <td>{{lad.wins}}</td>
-            </tr>
-        </table> 
-    </div>
-    
-    
-
-    
-    
 
 
+
+
+
+
+
+
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-3">Welcome to the AFL Website</h1>
+    <p class="lead">Scroll down to see the leader board and other related news</p>
+
+  </header>
+
+  <div>
+    <table cellpadding="0" class='table' style="width: 500px;height:500px">
+      <tr>
+
+        <th>Team</th>
+        <th>Wins</th>
+      </tr>
+      <tr *ngFor="let lad of ladder">
+
+        <td>{{lad.team}}</td>
+        <td>{{lad.wins}}</td>
+      </tr>
+    </table>
+  </div>

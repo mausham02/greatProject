@@ -1,49 +1,53 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
- 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active" >
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Home Page"><a class="nav-link" style="color:black;"routerLink="/">Home <span class="sr-only">(current)</span></a></span>
+      <li class="nav-item active">
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Home Page"><a class="nav-link"
+            style="color:black;" routerLink="/">Home <span class="sr-only">(current)</span></a></span>
       </li>
-        
+
       <li class="nav-item">
-        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Live Scores"><a class="nav-link"style="color:black;" routerLink="/matches">Matches</a></span>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Live Scores"><a class="nav-link"
+            style="color:black;" routerLink="/matches">Matches</a></span>
       </li>
-      <div class="dropdown" >
+      <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Teams
-        <span class="caret"></span>
-    </button>
-        <ul class="dropdown-menu" >
-          <li *ngFor="let team of teams" (click)="onSelect(team)"><a>{{team.name}}  <img src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"></a><br></li>
-         
-     
-         
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let team of teams" (click)="onSelect(team)"><a>{{team.name}} <img
+                src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"></a><br></li>
+
+
+
         </ul>
       </div>
-     
+
     </ul>
-  
+
   </div>
 </nav>
 
 
 <div *ngIf="tips">
-    <table class="table">
+  <table class="table">
 
-   
+
     <tr>
-        <th scope="col">Source</th>
-        <th scope="col">Prediction</th>
+      <th scope="col">Source</th>
+      <th scope="col">Prediction</th>
     </tr>
-    
+
     <tr *ngFor="let tip of tips">
-        <td>{{tip.source}}</td>
-        <td>{{tip.confidence}}</td>
+      <td>{{tip.source}}</td>
+      <td>{{tip.confidence}}</td>
     </tr>
-    </table>
-    
+  </table>
+
 </div>
