@@ -7,6 +7,7 @@ import {Tip} from './Tip';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators'
+import { Ladder } from './Ladder';
 
 
 
@@ -93,5 +94,27 @@ export class DataService {
     )
   } 
 
+  getLadder():Observable<Ladder[]>
+  {
+    return this.http.get('https://api.squiggle.com.au/?q=ladder;year=2019;round=19;').pipe(
+      map((data:any)=>data.ladder.map((item:any)=>
+      new Ladder(
+        item.swarms,
+        item.year,
+        item.wins,
+        item.sourceid,
+        item.percentage,
+        item.mean_rank,
+        item.source,
+        item.updated,
+        item.team,
+        item.number,
+        item.round,
+        item.teamid
+
+      ))
+    ))
+
+  }
 
 }

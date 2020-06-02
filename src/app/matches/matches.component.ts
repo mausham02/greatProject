@@ -59,7 +59,7 @@ export class MatchesComponent implements OnInit {
           })
 
           this.tips=tempArr;
-          console.log(tempArr.length)
+         
         })
  }
 
@@ -112,6 +112,7 @@ export class MatchesComponent implements OnInit {
       })
 
       this.wins=tempArr;
+      console.log(this.wins)
     })
   }
 

@@ -1,0 +1,24 @@
+.halfNav{
+
+    padding:10px;
+    margin-left:10px;
+    background-color: #4CAF50;
+    text-align: center;
+    color:white;
+
+}
+
+
+/* table {
+    counter-reset: rowNumber;
+  }
+  
+  table tr::before {
+    display: table-cell;
+    counter-increment: rowNumber;
+    content: counter(rowNumber) ".";
+    padding-right: 0.3em;
+    text-align: right;
+  } */
+
+

@@ -1,6 +1,8 @@
 
   
 <div *ngIf="games">
+
+
 <table  class="table">
         <thead>
         <tr>
@@ -31,22 +33,6 @@
     <br>
     <br>
     
-    <div *ngIf="nextFive">
-        <table>
-                <tr>
-                <th>Team</th>
-                <th>Opponent</th>
-                <th>Venue</th>
-                <th>Date</th>
-            </tr>
-            <tr *ngFor="let detail of nextFive">
-                <td>{{detail.hteam}} </td>
-                <td>{{detail.ateam}}</td>
-                <td>{{detail.venue}}</td>
-                <td>{{detail.date}}</td>
-            </tr>
-        </table>
-    </div>
     
     <div *ngIf="wins">
         <table>
