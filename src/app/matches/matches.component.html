@@ -28,7 +28,7 @@
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Teams
       <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" style="opacity: 1.1;">
       <li *ngFor="let team of teams" (click)="onSelect(team)"><img
             src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"><a>{{team.name}} </a><br></li>
 
@@ -44,10 +44,10 @@
 
 
   <div style="margin-top:5%;" *ngIf="!games">
-    <header class="jumbotron " height=150% >
+    <header class="jumbotron " height=150%  style="background-color: rgb(43, 43, 173);color:white;text-align: center;">
       
       <h1 class="display-1">Games Page</h1>
-      <p class="lead">Click on the drop down to view your team matches</p>
+      <p class="lead"><u>Click on the drop down to view your team matches</u></p>
     
     </header>
   </div>

@@ -1,17 +1,6 @@
-.halfNav{
-
-    padding:10px;
-    margin-left:10px;
-    
-    text-align: center;
-    color:black;
-    float:right;
-    
-    
-
-}
 
 
+/* 
 
 table {
     counter-reset: rowNumber;
@@ -27,7 +16,14 @@ table {
 
 
 
-  
+   */
+
+
+   .footy{
+    text-align:center;
+    height:80%;
+    width:80%
+   }
 
 
   #main{
@@ -50,4 +46,48 @@ tr:hover{
 
 
 }
+
+
+button{
+ 
+  text-align: center;
+}
+
+button a{
+  color:white;
+  margin-right:10%;
+
+}
+
+li{
+  margin-right:5px;
+}
+
+
+#first{
+
+  
+
+
+
+}
+
+
+#second{
+
+  width:98%
+
+ 
+
+
+
+}
+
+#third{
+
+width:98%
+
+}
+
+
 
