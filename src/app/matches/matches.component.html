@@ -59,8 +59,8 @@
 <div *ngIf="games">
 
   <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name" class="lead">Results of all the matches played by {{team.name}} <img
-        src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> </h2>
+    <h2 *ngIf="team.name==selectedTeam.name" class="lead"><u>Results of all the matches played by {{team.name}} <img
+        src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"></u> </h2>
 
   </div>
   <app-team-details [games]="games" *ngIf="games" id="firstTable"></app-team-details>
@@ -70,8 +70,8 @@
 <div *ngIf="wins">
 
   <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name" class="lead">Venues where {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}"
-        style="width:30px;height:30px;"> has won this season so far </h2>
+    <h2 *ngIf="team.name==selectedTeam.name" class="lead"><u>Venues where {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}"
+        style="width:30px;height:30px;"> has won this season so far</u> </h2>
 
   </div>
   <table class='table'>
