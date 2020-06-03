@@ -29,8 +29,8 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li *ngFor="let team of teams" (click)="onSelect(team)"><a>{{team.name}} <img
-            src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"></a><br></li>
+      <li *ngFor="let team of teams" (click)="onSelect(team)"><img
+            src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"><a>{{team.name}} </a><br></li>
 
 
 
@@ -44,9 +44,9 @@
 
 
   <div style="margin-top:5%;" *ngIf="!games">
-    <header class="jumbotron my-4" >
+    <header class="jumbotron " height=150% >
       
-      <h1 class="display-3">Games Page</h1>
+      <h1 class="display-1">Games Page</h1>
       <p class="lead">Click on the drop down to view your team matches</p>
     
     </header>
@@ -59,8 +59,8 @@
 <div *ngIf="games">
 
   <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name">Results of all the matches played by {{team.name}} <img
-        src="https://squiggle.com.au/{{team.logo}}" style="width:50px;height:50px;"> </h2>
+    <h2 *ngIf="team.name==selectedTeam.name" class="lead">Results of all the matches played by {{team.name}} <img
+        src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> </h2>
 
   </div>
   <app-team-details [games]="games" *ngIf="games" id="firstTable"></app-team-details>
@@ -70,8 +70,8 @@
 <div *ngIf="wins">
 
   <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name">Venues where {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}"
-        style="width:50px;height:50px;"> has won this season so far </h2>
+    <h2 *ngIf="team.name==selectedTeam.name" class="lead">Venues where {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}"
+        style="width:30px;height:30px;"> has won this season so far </h2>
 
   </div>
   <table class='table'>
@@ -101,7 +101,7 @@
 <div *ngIf="nextFive">
 
   <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name">The next five matches of my team {{team.name}} <img
+    <h2 *ngIf="team.name==selectedTeam.name" class="lead">The next five matches of my team {{team.name}} <img
         src="https://squiggle.com.au/{{team.logo}}" style="width:50px;height:50px;"> </h2>
 
   </div>

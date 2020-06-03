@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+ <nav class="navbar navbar-expand-md navbar-light bg-light ">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,7 +9,7 @@
                 <div>
   
                   <li>
-                      <a href="#"> <img src="../assets/images/AFLLOGO.png" class="logo" width=100px></a>
+                      <a href="#"> <img src="../assets/images/finalLogo.jpg" class="logo" style="width:50px;height:50px"></a>
                   </li>
   
                 </div>
@@ -53,37 +53,64 @@
 
 
 
-
+<div id="main">
  
 
   <!-- Page Content -->
   <div class="container"  >
 
     <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
+    <header class="jumbotron my-4" style="background-color: rgb(43, 43, 173);color:white">
       <h1 class="display-3">Welcome to the AFL Website</h1>
       <p class="lead">Scroll down to see the leader board and other related news</p>
     
     </header>
 
-    <div>
-        <table cellpadding="0" class='table' style="width: 50%;height:50%">
-            <tr >
-            
-                <th>Team</th>
-                <th>Wins</th>
-            </tr>
-            <tr *ngFor="let lad of ladder">
-              
-                <td>{{lad.team}}</td>
-                <td>{{lad.wins}}</td>
-            </tr>
-        </table> 
+
+    <div class="container-fluid">
+      <h1>Leader Board</h1>
+      
+      <p class="lead">All 18 teams and their points</p>
+      <div class="row">
+        <div class="col-sm-4" > <div id="first" >
+          <table cellpadding="0" class='table' >
+              <tr style="text-align: center;" >
+                
+                  <th>Team</th>
+                  <th>Wins</th>
+              </tr>
+              <tr *ngFor="let lad of ladder" class="rows">
+                
+                
+                  <td>{{lad.team}}</td>
+                  <td>{{lad.wins}}</td>
+              </tr>
+          </table> 
+      </div></div>
+    
+    
+      
+        <div class="col-sm-4"> <div id="second">
+          <div >
+    
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" >
+        </iframe>
+        </div>
+    
+        </div></div>
+      
+      </div>
     </div>
     
     
+    
+    
+ </div>
 
+
+
+      </div>
     
     
 
-
+    

@@ -49,7 +49,10 @@ export class MyTeamComponent implements OnInit {
       temp.forEach(element=>{
         if(element.sourceid==1) tempArr.push(element)
       })
+    
       this.ladder=tempArr;
+
+      console.log(this.ladder)
    
     });
     

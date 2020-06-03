@@ -30,8 +30,8 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li *ngFor="let team of teams" (click)="onSelect(team)"><a>{{team.name}} <img
-            src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"></a><br></li>
+      <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img
+            src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br></li>
 
 
 

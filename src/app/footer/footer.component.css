@@ -4,11 +4,11 @@ footer{
 
     width:100%;
  
-   display:flex;
+   /* display:flex; */
     background-color: rgba(0,0,0,.6);
     color: white;
 
-    position:absolute;
+    position: relative;
 
 
   

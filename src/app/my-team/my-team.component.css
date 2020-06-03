@@ -4,22 +4,34 @@
     margin-left:10px;
     
     text-align: center;
-    color:white;
+    color:black;
     float:right;
 
 }
 
 
-/* table {
+table {
     counter-reset: rowNumber;
   }
   
-  table tr::before {
+.rows::before {
     display: table-cell;
     counter-increment: rowNumber;
     content: counter(rowNumber) ".";
-    padding-right: 0.3em;
-    text-align: right;
-  } */
+  
+    text-align: center;
+  }
+
+
+
+  
+
+
+  #main{
+    overflow: auto;
+  }
+
+
+
 
 
