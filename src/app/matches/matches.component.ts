@@ -89,7 +89,7 @@ export class MatchesComponent implements OnInit {
       var tempArr=[];
 
       temp.forEach(element=>{
-        if((element.ateamid==this.selectedTeam.id || element.hteamid==this.selectedTeam.id) && element.round>=20 && element.round<25){
+        if((element.ateamid==this.selectedTeam.id || element.hteamid==this.selectedTeam.id) && element.round>=20 && element.round<=25){
           tempArr.push(element)
         }
       })
