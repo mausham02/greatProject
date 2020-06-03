@@ -61,3 +61,19 @@ a:hover{
       float: none;
     }
   }
+
+
+
+  th{
+    background-color: #77cc6d;
+}
+
+tr:hover{
+
+    cursor: pointer;
+    background-color:rgba(20,20,20,0.2);
+
+
+
+}
+
