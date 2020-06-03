@@ -22,35 +22,43 @@
 
 
 
- 
-
-  <div class="dropdown" style="float:right;margin-right:6%;">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Teams
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" style="opacity: 1.1;">
-      <li *ngFor="let team of teams" (click)="onSelect(team)"><img
-            src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"><a>{{team.name}} </a><br></li>
-
-
-
-    </ul>
-  </div>
-
-
-
 
   </div>
 
+  <!-- Page Content -->
+  <div class="container" >
 
-  <div style="margin-top:5%;" *ngIf="!games">
-    <header class="jumbotron " height=150%  style="background-color: rgb(43, 43, 173);color:white;text-align: center;">
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="../../assets/images/matches.jpg" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light">Welcome to Games Page</h1>
+        <p>Click on Teams above to View the games details of your teams</p>
+
+        <div class="dropdown" style="float:left;margin-right:6%;">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite teams
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img
+                  src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br></li>
       
-      <h1 class="display-1">Games Page</h1>
-      <p class="lead"><u>Click on the drop down to view your team matches</u></p>
+      
+      
+          </ul>
+        </div>
+        
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
     
-    </header>
-  </div>
+
+    
 
 
 
@@ -119,4 +127,6 @@
       <td>{{detail.date}}</td>
     </tr>
   </table>
+</div>
+
 </div>

@@ -55,12 +55,15 @@ button{
 
 button a{
   color:white;
-  margin-right:10%;
+  padding:20px;
+  
 
 }
 
-li{
-  margin-right:5px;
+.rightNav{
+  margin-right:20px;
+  
+
 }
 
 

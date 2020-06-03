@@ -7,6 +7,8 @@
   
 </div>
 
+
+
 <div class="content">
   <div>
 
@@ -22,42 +24,51 @@
 
 
 
+  </div>
 
  
 
-  <div class="dropdown" style="float:right;margin-right:6%;">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Teams
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img
-            src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br></li>
 
+  <!-- Page Content -->
+  <div class="container" >
 
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="../../assets/images/2019Prediction.jpg" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light">Welcome to Prediction Page</h1>
+        <p>Click on Teams above to View the prediction of your teams</p>
 
-    </ul>
-  </div>
-
-
-
-
-  </div>
-
-
-  <div style="margin-top:5%;" *ngIf="!tips">
-    <header class="jumbotron my-4" >
+        <div class="dropdown" style="float:left;margin-right:6%;">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite teams
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img
+                  src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br></li>
       
-      <h1 class="display-3">Prediction Page</h1>
-      <p class="lead">Click on the drop down to view your team predicition</p>
+      
+      
+          </ul>
+        </div>
+        
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
     
-    </header>
-  </div>
+
+    
 
 
   
   
 
-
+    <div id="main">
 
   <div *ngIf="tips">
     <div *ngFor="let team of teams">
@@ -97,6 +108,10 @@
 
 
 </div>
+
+
+</div>
+
 
 
 

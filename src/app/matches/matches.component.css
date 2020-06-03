@@ -77,3 +77,6 @@ tr:hover{
 
 }
 
+#main{
+  overflow:auto;
+}
