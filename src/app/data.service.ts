@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import {Team} from './Team';
-import {Game} from './Games';
-import {Tip} from './Tip';
+import { Team } from './Team';
+import { Game } from './Games';
+import { Tip } from './Tip';
 
-import {HttpClient,HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 import { Ladder } from './Ladder';
 
 
@@ -16,25 +16,23 @@ import { Ladder } from './Ladder';
 })
 export class DataService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getTeams(): Observable<Team[]>
-  {
+  getTeams(): Observable<Team[]> {
     return this.http.get('https://api.squiggle.com.au/?q=teams').
-    pipe(map((data:any)=>data.teams.map((item:any)=>
-    new Team(
-      item.name,
-      item.logo,
-      item.id,
-      item.abbrev
-  ))))
+      pipe(map((data: any) => data.teams.map((item: any) =>
+        new Team(
+          item.name,
+          item.logo,
+          item.id,
+          item.abbrev
+        ))))
 
   }
 
-  getGames(): Observable<Game[]>
-  {
-    return this.http.get('https://api.squiggle.com.au/?q=games;year=2019').pipe(
-      map((data:any)=>data.games.map((item: any)=>new Game(
+  getGames(): Observable<Game[]> {
+    return this.http.get('https://api.squiggle.com.au/?q=games;').pipe(
+      map((data: any) => data.games.map((item: any) => new Game(
 
         item.is_grand_final,
         item.hbehinds,
@@ -58,15 +56,14 @@ export class DataService {
         item.winner,
         item.hscore,
         item.hteamid
- )))
+      )))
     )
   }
 
 
-  getTips(): Observable<Tip[]>
-  {
+  getTips(): Observable<Tip[]> {
     return this.http.get('https://api.squiggle.com.au/?q=tips;year=2019;round=20').pipe(
-      map((data:any)=>data.tips.map((item:any)=>new Tip(
+      map((data: any) => data.tips.map((item: any) => new Tip(
 
         item.tip,
         item.round,
@@ -92,28 +89,27 @@ export class DataService {
 
       )))
     )
-  } 
+  }
 
-  getLadder():Observable<Ladder[]>
-  {
+  getLadder(): Observable<Ladder[]> {
     return this.http.get('https://api.squiggle.com.au/?q=ladder;year=2019;round=19;').pipe(
-      map((data:any)=>data.ladder.map((item:any)=>
-      new Ladder(
-        item.swarms,
-        item.year,
-        item.wins,
-        item.sourceid,
-        item.percentage,
-        item.mean_rank,
-        item.source,
-        item.updated,
-        item.team,
-        item.number,
-        item.round,
-        item.teamid
+      map((data: any) => data.ladder.map((item: any) =>
+        new Ladder(
+          item.swarms,
+          item.year,
+          item.wins,
+          item.sourceid,
+          item.percentage,
+          item.mean_rank,
+          item.source,
+          item.updated,
+          item.team,
+          item.number,
+          item.round,
+          item.teamid
 
+        ))
       ))
-    ))
 
   }
 

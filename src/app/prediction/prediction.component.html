@@ -1,115 +1,121 @@
-
 <div class="sidebar">
   <a class="active" routerLink="/" href="#home">Home</a>
   <a routerLink="/matches">Matches</a>
   <a routerLink="/prediction">Prediction</a>
   <a routerLink="/rival">Rival Matches</a>
 
-  
-  
+
+
 </div>
 
 
 
 <div class="content">
-  <div>
-
-  </div>
-
- 
-
-
   <!-- Page Content -->
-  <div class="container" >
+  <div class="container">
 
     <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7">
+    <div class="row align-items-center my-4">
+      <div class="col-lg-6">
         <img class="img-fluid rounded mb-4 mb-lg-0" src="../../assets/images/2019Prediction.jpg" alt="">
       </div>
       <!-- /.col-lg-8 -->
       <div class="col-lg-5">
         <h1 class="font-weight-light">Welcome to Prediction Page</h1>
-        <p>Click on Teams above to View the prediction of your teams</p>
+        <p>Click on dropdown to View the prediction of your teams</p>
 
         <div class="dropdown" style="float:left;margin-right:6%;">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite teams
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite
+            teams
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img
-                  src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br></li>
-      
-      
-      
+            <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img src="https://squiggle.com.au/{{team.logo}}"
+                  style="width:20px;height:20px;"> {{team.name}}</a><br></li>
+
+
+
           </ul>
         </div>
-        
+
       </div>
       <!-- /.col-md-4 -->
     </div>
     <!-- /.row -->
 
-    
-
-    
 
 
-  
-  
 
-    <div id="main">
 
-  <div *ngIf="tips">
-    <div *ngFor="let team of teams">
 
-      <h2 *ngIf="team.name==selectedTeam.name"><u>Prediction of {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}"
-        style="width:50px;height:50px;"><br><p class="lead">This is the prediction for next Game</p></u>
-      </h2>
-        
+
+
+
+
+
+    <div *ngIf="tips">
+      <div *ngFor="let team of teams">
+
+        <h2 *ngIf="team.name==selectedTeam.name"><u>Prediction of {{team.name}} <img
+              src="https://squiggle.com.au/{{team.logo}}" style="width:50px;height:50px;"><br>
+            <p class="lead">This is the prediction for next Game</p>
+          </u>
+        </h2>
+
+      </div>
+
+
     </div>
 
+
+
+
+
+
+
+    <div *ngIf="tips">
+      <table class="table">
+
+
+        <tr>
+          <th scope="col">Source</th>
+          <th scope="col">Prediction</th>
+        </tr>
+
+        <tr *ngFor="let tip of tips">
+          <td>{{tip.source}}</td>
+          <td>{{tip.confidence}}</td>
+        </tr>
+      </table>
+
+    </div>
+
+
+
+
+    <div *ngIf="home">
+
+
+      <div><p class="lead" style="background-color: brown;color:white">Below are the results of all the games played by your team at home in since 2018</p></div>
+      <table>
+        <tr>
+          <th> Opposition </th>
+          <th>Winner </th>
+          <th> Date </th>
+        </tr>
+
+        <tr *ngFor="let home of home">
+          <td>{{home.ateam}}</td>
+          <td>{{home.winner}}</td>
+          <td>{{home.date}}</td>
+        </tr>
+      </table>
     
+    </div>
+
+
+
+
+
+
   </div>
-
-  
-
-
-  
-
-
-  <div *ngIf="tips">
-    <table class="table">
-  
-  
-      <tr>
-        <th scope="col">Source</th>
-        <th scope="col">Prediction</th>
-      </tr>
-  
-      <tr *ngFor="let tip of tips">
-        <td>{{tip.source}}</td>
-        <td>{{tip.confidence}}</td>
-      </tr>
-    </table>
-  
-  </div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
