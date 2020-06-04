@@ -13,6 +13,7 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
 import {FooterComponent} from './footer/footer.component';
 import { PredictionComponent } from './prediction/prediction.component';
 import { MatchesComponent } from './matches/matches.component';
+import { TeamRivalComponent } from './team-rival/team-rival.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatchesComponent } from './matches/matches.component';
     TeamDetailsComponent,
     FooterComponent,
     PredictionComponent,
-    MatchesComponent
+    MatchesComponent,
+    TeamRivalComponent
   ],
   imports: [
     BrowserModule,

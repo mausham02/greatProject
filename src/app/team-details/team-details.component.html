@@ -1,16 +1,14 @@
-
-  
 <div *ngIf="games">
 
 
-<table  class="table">
+    <table class="table">
         <thead>
-        <tr>
-            <th scope="col">Away Team</th>
-            <th scope="col">Home Team</th>
-            <th scope="col">Winner</th>
-            <th scope="col">Result</th>
-        </tr>
+            <tr>
+                <th scope="col">Away Team</th>
+                <th scope="col">Home Team</th>
+                <th scope="col">Winner</th>
+                <th scope="col">Result</th>
+            </tr>
         </thead>
         <tr *ngFor="let game of games">
             <td>{{game.ateam}}</td>
@@ -23,34 +21,30 @@
 
 
 
-    
-    
-  
 
 
-    
-    
-    <br>
-    <br>
-    
-    
-    <div *ngIf="wins">
-        <table>
-            <tr>
-                <th>Team A</th>
-                <th>Team B</th>
-                <th>Winner</th>
-                
-            </tr>
-            <tr *ngFor="let win of wins">
-                <td>{{win.ateam}}</td>
-                <td>{{win.hteam}}</td>
-                <td>{{win.winner}}</td>
-            </tr>
-        </table>
-    </div>
-    
-    
-    
-    
-    
+
+
+
+
+
+<br>
+<br>
+
+
+<div *ngIf="wins">
+    <table>
+        <tr>
+            <th>Team A</th>
+            <th>Team B</th>
+            <th>Winner</th>
+
+        </tr>
+        <tr *ngFor="let win of wins">
+            <td>{{win.ateam}}</td>
+            <td>{{win.hteam}}</td>
+            <td>{{win.winner}}</td>
+        </tr>
+    </table>
+</div>
+

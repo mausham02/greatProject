@@ -1,8 +1,8 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Team } from '../Team';
-import {Game} from '../Games';
-import {Tip} from '../Tip';
+import { Game } from '../Games';
+import { Tip } from '../Tip';
 
 @Component({
   selector: 'app-team-details',
@@ -11,13 +11,22 @@ import {Tip} from '../Tip';
 })
 export class TeamDetailsComponent implements OnInit {
 
-  @Input() 
-    
-  games: Game[]; 
+  @Input()
+
+  games: Game[];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-}
+
+
+  
+  }
+
+
+
+
+
+

@@ -9,6 +9,9 @@ footer{
     color: white;
 
     position: relative;
+    overflow:auto; 
+    bottom:0;
+    margin-top: 243px;
 
 
   

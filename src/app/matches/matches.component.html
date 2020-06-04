@@ -1,39 +1,22 @@
-
 <div class="sidebar">
   <a class="active" routerLink="/" href="#home">Home</a>
- 
   <a routerLink="/matches">Matches</a>
   <a routerLink="/prediction">Prediction</a>
-  
-  <a routerLink="/rival">Rival</a>
+  <a routerLink="/rival">Rival Matches</a>
 
-  
-  
 
-  
-  
+
 </div>
 
 <div class="content">
   <div>
 
-  <div *ngIf="!games">
-
-
- 
-  
- 
-
-  </div>
-
-
-
-
-
+    <div *ngIf="!games">
+    </div>
   </div>
 
   <!-- Page Content -->
-  <div class="container" >
+  <div class="container">
 
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
@@ -43,97 +26,145 @@
       <!-- /.col-lg-8 -->
       <div class="col-lg-5">
         <h1 class="font-weight-light">Welcome to Games Page</h1>
-        <p>Click on Teams above to View the games details of your teams</p>
+        <p>Click on dropdown below to View the games details of your teams</p>
 
         <div class="dropdown" style="float:left;margin-right:6%;">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite teams
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite
+            teams
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img
-                  src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br></li>
-      
-      
-      
+            <li *ngFor="let team of teams" (click)="onSelect(team)"><a> <img src="https://squiggle.com.au/{{team.logo}}"
+                  style="width:20px;height:20px;"> {{team.name}}</a><br></li>
+
+
+
           </ul>
         </div>
-        
+
       </div>
       <!-- /.col-md-4 -->
     </div>
     <!-- /.row -->
 
-    
 
-    
-
+    <div *ngIf="games">
 
 
+      <div>
+        <h1 class="lead" style="background-color: rgb(121, 236, 5); color:white;text-align:center"> Scroll down to see
+          all the details of your team</h1>
+      </div>
+
+      <div *ngIf="myTeamFinal[0]==null">
+        <h1 class="lead" style="background-color: brown;color:white">Your Team hasnt reached to final in last 10 years
+        </h1>
+      </div>
 
 
-<div *ngIf="games">
 
-  <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name" class="lead"><u>Results of all the matches played by {{team.name}} <img
-        src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"></u> </h2>
+      <div *ngFor="let team of teams">
+
+
+
+
+        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>Results of all the matches played by {{team.name}}
+            <img src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"></strong> </h2>
+
+      </div>
+      <app-team-details [games]="games" *ngIf="games" id="firstTable"></app-team-details>
+
+    </div>
+
+    <div *ngIf="wins">
+
+      <div *ngFor="let team of teams">
+        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>Venues where {{team.name}} <img
+              src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> has won this season so
+            far</strong> </h2>
+
+      </div>
+      <table class='table'>
+
+        <tr>
+          <th>Away Team</th>
+          <th>Home Team</th>
+          <th>Winning Venues</th>
+
+        </tr>
+
+        <tr *ngFor="let win of wins">
+          <td>{{win.ateam}}</td>
+          <td>{{win.hteam}}</td>
+          <td>{{win.venue}}</td>
+
+
+        </tr>
+
+
+      </table>
+
+
+    </div>
+
+
+    <div *ngIf="nextFive">
+
+      <div *ngFor="let team of teams">
+        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>The next five matches of my team
+            {{team.name}}</strong> <img src="https://squiggle.com.au/{{team.logo}}" style="width:50px;height:50px;">
+        </h2>
+
+      </div>
+      <table class='table'>
+        <tr>
+          <th>Team</th>
+          <th>Opponent</th>
+          <th>Venue</th>
+          <th>Date</th>
+        </tr>
+        <tr *ngFor="let detail of nextFive">
+          <td>{{detail.hteam}} </td>
+          <td>{{detail.ateam}}</td>
+          <td>{{detail.venue}}</td>
+          <td>{{detail.date}}</td>
+        </tr>
+      </table>
+    </div>
+
+
+
+
+    <div *ngIf="myTeamFinal">
+
+      <div *ngFor="let team of teams">
+        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>List of Final Played by {{team.name}} in last 10
+            years</strong>
+        </h2>
+
+      </div>
+      <table class="table" *ngIf="myTeamFinal[0]!=null">
+        <tr>
+          <th>Team A</th>
+          <th>Team B</th>
+          <th>Winner</th>
+          <th>Match date</th>
+        </tr>
+
+        <tr *ngFor="let final of myTeamFinal">
+          <td>{{final.ateam}}</td>
+          <td>{{final.hteam}}</td>
+          <td>{{final.winner}}</td>
+          <td>{{final.date}}</td>
+        </tr>
+
+      </table>
+
+
+
+
+
+    </div>
+
 
   </div>
-  <app-team-details [games]="games" *ngIf="games" id="firstTable"></app-team-details>
-
-</div>
-
-<div *ngIf="wins">
-
-  <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name" class="lead"><u>Venues where {{team.name}} <img src="https://squiggle.com.au/{{team.logo}}"
-        style="width:30px;height:30px;"> has won this season so far</u> </h2>
-
-  </div>
-  <table class='table'>
-
-    <tr>
-      <th>Away Team</th>
-      <th>Home Team</th>
-      <th>Winning Venues</th>
-
-    </tr>
-
-    <tr *ngFor="let win of wins">
-      <td>{{win.ateam}}</td>
-      <td>{{win.hteam}}</td>
-      <td>{{win.venue}}</td>
-
-
-    </tr>
-
-
-  </table>
-
-
-</div>
-
-
-<div *ngIf="nextFive">
-
-  <div *ngFor="let team of teams">
-    <h2 *ngIf="team.name==selectedTeam.name" class="lead">The next five matches of my team {{team.name}} <img
-        src="https://squiggle.com.au/{{team.logo}}" style="width:50px;height:50px;"> </h2>
-
-  </div>
-  <table class='table'>
-    <tr>
-      <th>Team</th>
-      <th>Opponent</th>
-      <th>Venue</th>
-      <th>Date</th>
-    </tr>
-    <tr *ngFor="let detail of nextFive">
-      <td>{{detail.hteam}} </td>
-      <td>{{detail.ateam}}</td>
-      <td>{{detail.venue}}</td>
-      <td>{{detail.date}}</td>
-    </tr>
-  </table>
-</div>
-
-</div>
