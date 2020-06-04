@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MyTeamComponent } from './my-team/my-team.component';
+import { MyTeamComponent } from './home-page/my-team.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { PredictionComponent } from './prediction/prediction.component';
 import { MatchesComponent } from './matches/matches.component';
