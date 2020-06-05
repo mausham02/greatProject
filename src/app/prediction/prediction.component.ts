@@ -75,7 +75,6 @@ export class PredictionComponent implements OnInit {
 
       this.home=tempArr;
 
-      console.log(this.home)
       
     })
 

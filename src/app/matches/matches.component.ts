@@ -133,7 +133,7 @@ export class MatchesComponent implements OnInit {
 
       this.myTeamFinal = tempArr;
 
-      console.log(tempArr)
+     
     })
   }
 

@@ -80,3 +80,7 @@ tr:hover{
 #main{
 overflow:auto;
 }
+
+.table{
+  width:80%;
+}

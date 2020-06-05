@@ -52,9 +52,10 @@
   
   
       <div *ngIf="myTeam">
-        <h1>You have selected {{myTeam.name}} </h1>
-        <h3 *ngIf="!myTeam">Now select your team rival</h3>
-  
+        <div style="color:white;width:25%;"> <button class="btn btn-success"> You have selected {{myTeam.name}}</button><hr></div>
+       
+        <br>
+       
   
         <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your Rival team
@@ -71,7 +72,8 @@
   
   
       <div *ngIf="rivalTeam">
-        All the results of {{myTeam.name}} vs {{rivalTeam.name}} in this season
+        <br>
+        <h4 style="color:red">All the results of {{myTeam.name}} vs {{rivalTeam.name}} in this season<hr></h4>
   
         <div>
           <table class='table'>

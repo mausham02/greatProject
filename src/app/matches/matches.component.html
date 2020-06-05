@@ -52,14 +52,11 @@
 
 
       <div>
-        <h1 class="lead" style="background-color: rgb(121, 236, 5); color:white;text-align:center"> Scroll down to see
-          all the details of your team</h1>
+        <h3 style="color:green"> Scroll down to see
+          all the details of your team<hr></h3>
       </div>
 
-      <div *ngIf="myTeamFinal[0]==null">
-        <h1 class="lead" style="background-color: brown;color:white">Your Team hasnt reached to final in last 10 years
-        </h1>
-      </div>
+     
 
 
 
@@ -68,8 +65,8 @@
 
 
 
-        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>Results of all the matches played by {{team.name}}
-            <img src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"></strong> </h2>
+        <h3 *ngIf="team.name==selectedTeam.name" style="color:red">Results of all the matches played by {{team.name}}
+            <img src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> </h3>
 
       </div>
       <app-team-details [games]="games" *ngIf="games" id="firstTable"></app-team-details>
@@ -79,9 +76,9 @@
     <div *ngIf="wins">
 
       <div *ngFor="let team of teams">
-        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>Venues where {{team.name}} <img
+        <h3 *ngIf="team.name==selectedTeam.name" style="color:red">Venues where {{team.name}} <img
               src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> has won this season so
-            far</strong> </h2>
+            far </h3>
 
       </div>
       <table class='table'>
@@ -111,9 +108,9 @@
     <div *ngIf="nextFive">
 
       <div *ngFor="let team of teams">
-        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>The next five matches of my team
+        <h3 *ngIf="team.name==selectedTeam.name" style="color:red"><strong>The next five matches of my team
             {{team.name}}</strong> <img src="https://squiggle.com.au/{{team.logo}}" style="width:50px;height:50px;">
-        </h2>
+        </h3>
 
       </div>
       <table class='table'>
@@ -137,11 +134,18 @@
 
     <div *ngIf="myTeamFinal">
 
+     
       <div *ngFor="let team of teams">
-        <h2 *ngIf="team.name==selectedTeam.name" class="lead"><strong>List of Final Played by {{team.name}} in last 10
-            years</strong>
-        </h2>
+        <h3 *ngIf="team.name==selectedTeam.name" style="color:red">List of Final Played by {{team.name}} in last 10
+            years
+        </h3>
 
+     
+      </div>
+
+      <div *ngIf="myTeamFinal[0]==null">
+        <h1 class="lead" style="background-color: brown;color:white;width:60%">Your Team hasnt reached to final in last 10 years
+        </h1>
       </div>
       <table class="table" *ngIf="myTeamFinal[0]!=null">
         <tr>

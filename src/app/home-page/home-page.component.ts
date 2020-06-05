@@ -54,9 +54,6 @@ export class HomePageComponent implements OnInit {
       })
 
       this.ladder = tempArr;
-
-      console.log(this.ladder)
-
     });
 
 
