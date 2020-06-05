@@ -56,11 +56,11 @@
     <div *ngIf="tips">
       <div *ngFor="let team of teams">
 
-        <h2 *ngIf="team.name==selectedTeam.name"><u>Prediction of {{team.name}} <img
+        <h3 *ngIf="team.name==selectedTeam.name" style="color:red">Prediction of {{team.name}} <img
               src="https://squiggle.com.au/{{team.logo}}" style="width:50px;height:50px;"><br>
             <p class="lead">This is the prediction for next Game</p>
-          </u>
-        </h2>
+          
+        </h3>
 
       </div>
 
@@ -96,7 +96,7 @@
     <div *ngIf="home">
 
 
-      <div><p class="lead" style="background-color: brown;color:white">Below are the results of all the games played by your team at home in since 2018</p></div>
+      <div><h3 style="background-color: brown;color:red">Below are the results of all the games played by your team at home in since 2018</h3></div>
       <table>
         <tr>
           <th> Opposition </th>
