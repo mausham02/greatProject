@@ -19,11 +19,7 @@ export class TeamDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
-
-  
-  }
+}
 
 
 

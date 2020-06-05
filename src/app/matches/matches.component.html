@@ -52,10 +52,12 @@
 
       <div>
         <h3 style="color:green"> Scroll down to see
-          all the details of your team<hr></h3>
+          all the details of your team
+          <hr>
+        </h3>
       </div>
 
-     
+
 
 
 
@@ -65,9 +67,11 @@
 
 
         <h3 *ngIf="team.name==selectedTeam.name" style="color:red">Results of all the matches played by {{team.name}}
-            <img src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> </h3>
+          <img src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> </h3>
 
       </div>
+
+      <!-- use of event binding -->
       <app-team-details [games]="games" *ngIf="games" id="firstTable"></app-team-details>
 
     </div>
@@ -76,8 +80,8 @@
 
       <div *ngFor="let team of teams">
         <h3 *ngIf="team.name==selectedTeam.name" style="color:red">Venues where {{team.name}} <img
-              src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> has won this season so
-            far </h3>
+            src="https://squiggle.com.au/{{team.logo}}" style="width:30px;height:30px;"> has won this season so
+          far </h3>
 
       </div>
       <table class='table'>
@@ -133,17 +137,18 @@
 
     <div *ngIf="myTeamFinal">
 
-     
+
       <div *ngFor="let team of teams">
         <h3 *ngIf="team.name==selectedTeam.name" style="color:red">List of Final Played by {{team.name}} in last 10
-            years
+          years
         </h3>
 
-     
+
       </div>
 
       <div *ngIf="myTeamFinal[0]==null">
-        <h1 class="lead" style="background-color: brown;color:white;width:60%">Your Team hasnt reached to final in last 10 years
+        <h1 class="lead" style="background-color: brown;color:white;width:60%">Your Team hasnt reached to final in last
+          10 years
         </h1>
       </div>
       <table class="table" *ngIf="myTeamFinal[0]!=null">

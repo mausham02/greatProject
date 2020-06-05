@@ -1,103 +1,107 @@
 <div class="sidebar">
-    <a class="active" routerLink="/" href="#home">Home</a>
-    <a routerLink="/matches">Matches</a>
-    <a routerLink="/prediction">Prediction</a>
-    <a routerLink="/rival">Rival Matches</a>
-  
-  
-  
-  </div>
-  
-  <div class="content">
-    <div class="container">
-  
-      <div id="main">
-  
-        <!-- Page Content -->
-        <div class="container">
-  
-          <!-- Jumbotron Header -->
-          <header class="jumbotron my-4" style="background-color: rgb(43, 43, 173);color:white;text-align: center;">
-  
-            <h1 class="display-3">Compare Your Team and its Rival</h1>
-            <p class="lead">Select your favourite team by clicking on the dropdown</p>
-  
-  
-          </header>
-  
-  
-          <div class="dropdown" style="margin-right:6%;" *ngIf="!myTeam">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite
-              team
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li *ngFor="let team of teams" (click)="selectMyTeam(team)"><a> <img
-                    src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br>
-              </li>
-  
-  
-  
-            </ul>
-          </div>
-  
-        </div>
-  
-  
-  
-      </div>
-  
-      
-  
-  
-  
-      <div *ngIf="myTeam">
-        <div style="color:white;width:25%;"> <button class="btn btn-success"> You have selected {{myTeam.name}}</button><hr></div>
-       
-        <br>
-       
-  
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your Rival team
+  <a class="active" routerLink="/" href="#home">Home</a>
+  <a routerLink="/matches">Matches</a>
+  <a routerLink="/prediction">Prediction</a>
+  <a routerLink="/rival">Rival Matches</a>
+
+
+
+</div>
+
+<div class="content">
+  <div class="container">
+
+    <div id="main">
+
+      <!-- Page Content -->
+      <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron my-4" style="background-color: rgb(43, 43, 173);color:white;text-align: center;">
+
+          <h1 class="display-3">Compare Your Team and its Rival</h1>
+          <p class="lead">Select your favourite team by clicking on the dropdown</p>
+
+
+        </header>
+
+
+        <div class="dropdown" style="margin-right:6%;" *ngIf="!myTeam">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your favourite
+            team
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li *ngFor="let team of teams" (click)="selectRivalTeam(team)"><a *ngIf="team.name != myTeam.name"> <img
+            <li *ngFor="let team of teams" (click)="selectMyTeam(team)"><a> <img
                   src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br>
             </li>
+
+
+
           </ul>
         </div>
-  
+
       </div>
-  
-  
-      <div *ngIf="rivalTeam">
-        <br>
-        <h4 style="color:red">All the results of {{myTeam.name}} vs {{rivalTeam.name}} in this season<hr></h4>
-  
-        <div>
-          <table class='table'>
-            <tr>
-              <th scope="col">Away Team</th>
-              <th scope="col">Home Team</th>
-  
-              <th>Venue</th>
-              <th>Result</th>
-            </tr>
-  
-            <tr *ngFor="let game of games">
-              <td>{{game.ateam}}</td>
-              <td>{{game.hteam}}</td>
-              <td>{{game.venue}}</td>
-              <td>{{game.ascore}}-{{game.hscore}}</td>
-  
-            </tr>
-          </table>
-        </div>
-  
-      </div>
-  
-  
-  
-  
+
+
+
     </div>
+
+
+
+
+
+    <div *ngIf="myTeam">
+      <div style="color:white;width:25%;"> <button class="btn btn-success"> You have selected {{myTeam.name}}</button>
+        <hr>
+      </div>
+
+      <br>
+
+
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your Rival team
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let team of teams" (click)="selectRivalTeam(team)"><a *ngIf="team.name != myTeam.name"> <img
+                src="https://squiggle.com.au/{{team.logo}}" style="width:20px;height:20px;"> {{team.name}}</a><br>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div *ngIf="rivalTeam">
+      <br>
+      <h4 style="color:red">All the results of {{myTeam.name}} vs {{rivalTeam.name}} in this season
+        <hr>
+      </h4>
+
+      <div>
+        <table class='table'>
+          <tr>
+            <th scope="col">Away Team</th>
+            <th scope="col">Home Team</th>
+
+            <th>Venue</th>
+            <th>Result</th>
+          </tr>
+
+          <tr *ngFor="let game of games">
+            <td>{{game.ateam}}</td>
+            <td>{{game.hteam}}</td>
+            <td>{{game.venue}}</td>
+            <td>{{game.ascore}}-{{game.hscore}}</td>
+
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+
+
+
+  </div>

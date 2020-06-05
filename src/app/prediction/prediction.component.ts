@@ -63,6 +63,9 @@ export class PredictionComponent implements OnInit {
   }
 
 
+  // get my home team record since last year
+
+
 
   getMyTeamHomeRecord():  void{
 

@@ -29,38 +29,40 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.getTeams();
-    this.getLadderBoard();
+    // this.getLadderBoard();
     this.getUpcomingMatches();
 
 
 
   }
 
-
+  // Getting all the teams
   getTeams(): void {
 
     this.dataService.getTeams().subscribe(temp => this.teams = temp
     )
   }
 
-  getLadderBoard(): void {
+  
 
-    this.dataService.getLadder().subscribe(temp => {
+  // getLadderBoard(): void {
 
-      var tempArr = [];
+  //   this.dataService.getLadder().subscribe(temp => {
 
-      temp.forEach(element => {
-        if (element.source == "Squiggle") tempArr.push(element)
-      })
+  //     var tempArr = [];
 
-      this.ladder = tempArr;
-    });
+  //     temp.forEach(element => {
+  //       if (element.source == "Squiggle") tempArr.push(element)
+  //     })
 
-
-  }
-
+  //     this.ladder = tempArr;
+  //   });
 
 
+  // }
+
+
+// getting the upcoming matches
   getUpcomingMatches():void{
     this.dataService.getGames().subscribe(temp=>{
       var tempArr=[];
@@ -75,11 +77,6 @@ export class HomePageComponent implements OnInit {
       })
     })
   }
-
-
-
-
-
 
 }
 

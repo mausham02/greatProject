@@ -3,8 +3,6 @@ import { Team } from '../Team';
 import { Game } from '../Games';
 import { DataService } from '../data.service';
 import { Data } from '@angular/router';
-import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
-
 
 @Component({
   selector: 'app-team-rival',
@@ -36,6 +34,8 @@ export class TeamRivalComponent implements OnInit {
 
   }
 
+  
+
   selectRivalTeam(team: Team): void {
 
     this.rivalTeam = team;
@@ -46,6 +46,8 @@ export class TeamRivalComponent implements OnInit {
   getAFLTeams(): void {
     this.dataService.getTeams().subscribe(temp => { this.teams = temp })
   }
+
+
 
 
   getMyTeamRival(): void {

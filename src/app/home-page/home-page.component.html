@@ -29,7 +29,7 @@
 
 
 
-      <li class="rightNav" >
+      <li class="rightNav">
 
         <button class="btn btn-success"><a routerLink="/prediction">Prediction</a></button>
       </li>
@@ -66,9 +66,9 @@
 
 
     <div class="container-fluid" id="first">
-      
 
-  
+
+
       <div class="row">
         <div class="col-sm-4">
           <div id="first">
@@ -79,14 +79,14 @@
 
                 <th>Upcoming Matches</th>
                 <th>Date</th>
-                
+
               </tr>
               <tr *ngFor="let match of upcoming" class="rows">
 
 
                 <td>{{match.ateam}} VS {{match.hteam}}</td>
                 <td>{{match.date}}</td>
-               
+
               </tr>
             </table>
           </div>
